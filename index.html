@@ -5,6 +5,7 @@
 		<link type="text/css" rel="stylesheet" href="css/bulma-dark.css">
 		<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
 		<script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/flip.js"></script>
         <style>
             html {
                 background-color: #000;
@@ -22,12 +23,14 @@
 				var elem = $("#toggle-video");
 				elem.click(function() {
 					if (elem.text() == 'See After') {
-						elem.text('See Before');	
+						elem.text('See Before');
+                        $("#before").hide();
+                        $("#after").fadeIn(2000);
 					} else if (elem.text() == 'See Before') {
 						elem.text('See After');
+                        $("#after").hide();
+                        $("#before").fadeIn(500);
 					}
-					$("#after").toggleClass('hidden');
-					$("#before").toggleClass('hidden');
 				});
 				
 			});
@@ -45,15 +48,19 @@
 							<br>
 							<p id="toggle-video" class="button is-light is-medium">See After</p>
 						</div>
-                        <div class="column is-6">
-                            <figure class="image hidden" id="after">
-                                <video autoplay="autoplay" loop="loop" width="821" height="757">
-                                  <source src="img/xray-cropped-min.mp4" type="video/mp4" />
-                                </video>
-                            </figure>
-                            <figure class="image" id="before">
-                                <img src="img/xray-frame.png" alt="lung xray before" id="before-image">
-                            </figure>
+                        <div class="column is-6 flip">
+                            <div class="back">
+                                <figure class="image hidden" id="after">
+                                    <video autoplay="autoplay" loop="loop" width="821" height="757">
+                                      <source src="img/xray-cropped-min.mp4" type="video/mp4" />
+                                    </video>
+                                </figure>
+                            </div>
+                            <div class="front">
+                                <figure class="image" id="before">
+                                    <img src="img/xray-frame.png" alt="lung xray before" id="before-image">
+                                </figure>
+                            </div>
                         </div>
 					</div>
 				</div>

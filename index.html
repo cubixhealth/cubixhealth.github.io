@@ -4,40 +4,73 @@
 		<title>Home | Cubix</title>
 		<link type="text/css" rel="stylesheet" href="css/bulma-dark.css">
 		<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+		<script src="js/jquery-3.1.1.min.js"></script>
         <style>
             html {
                 background-color: #000;
             }
+            .hidden {
+            	display: none;
+            }
+            #before-image {
+            	height: 300px;
+            	width: auto;
+            }
         </style>
+        <script>
+			$(document).ready(function() {
+				var elem = $("#toggle-video");
+				elem.click(function() {
+					if (elem.text() == 'See After') {
+						elem.text('See Before');	
+					} else if (elem.text() == 'See Before') {
+						elem.text('See After');
+					}
+					$("#after").toggleClass('hidden');
+					$("#before1").toggleClass('hidden');
+					$("#before2").toggleClass('hidden');
+				});
+				
+			});
+        	
+        </script>
 	</head>
 	<body>
-		<!-- <nav class="nav">
-			<div class="nav-left">
-				<a href="index.html" class="nav-item">Cubix</a>
-			</div>
-		</nav> -->
 		<div class="hero is-info is-small">
 			<div class="hero-body">
 				<div class="container">
 					<div class="columns">
 						<div class="column is-12 has-text-centered">
-							<h1 class="title is-1">Cubix Health</h1>
+							<h1 class="title is-1">Cubix Health Technologies</h1>
 							<p class="subtitle is-5">revolutionary imaging</p>
+							<br>
+							<p id="toggle-video" class="button is-light is-medium">See After</p>
 						</div>
 					</div>
+
                     <div class="columns">
                         <div class="column is-6 is-offset-3">
-                            <figure class="image">
+                            <figure class="image hidden" id="after">
                                 <video autoplay="autoplay" loop="loop" width="821" height="757">
                                   <source src="img/xray-cropped-min.mp4" type="video/mp4" />
                                 </video>
                             </figure>
                         </div>
                     </div>
+
                     <div class="columns">
-                        <div class="column is-6 is-offset-3 has-text-centered">
-                             <button class="button is-light is-medium">Coming Soon</button>
-                        </div>
+                    	<div class="column is-3"></div>
+                    	<div class="column is-3">
+                    		<figure class="image" id="before1">
+                                <img src="img/chest1.png" alt="lung xray before 1" id="before-image">
+                            </figure>
+                    	</div>
+                    	<div class="column is-3">
+                    		<figure class="image" id="before2">
+                                <img src="img/chest2.png" alt="lung xray before 2" id="before-image">
+                            </figure>
+                    	</div>
+                    	<div class="column is-3"></div>
                     </div>
 				</div>
 			</div>

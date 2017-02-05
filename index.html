@@ -5,7 +5,6 @@
 		<link type="text/css" rel="stylesheet" href="css/bulma-dark.css">
 		<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
 		<script src="js/jquery-3.1.1.min.js"></script>
-        <script src="js/flip.js"></script>
         <style>
             html {
                 background-color: #000;
@@ -14,7 +13,7 @@
             	display: none;
             }
             #before-image {
-            	width: 900px;
+            	width: 1000px;
             	height: auto;
             }
         </style>
@@ -38,29 +37,27 @@
         </script>
 	</head>
 	<body>
-		<div class="hero is-info is-medium">
+		<div class="hero is-info is-small">
 			<div class="hero-body">
 				<div class="container">
 					<div class="columns">
 						<div class="column is-4">
+                            <br><br><br>
 							<h1 class="title is-1">Cubix Health Technologies</h1>
 							<p class="subtitle is-5">revolutionary imaging</p>
 							<br>
 							<p id="toggle-video" class="button is-light is-medium">See After</p>
 						</div>
-                        <div class="column is-6 flip">
-                            <div class="back">
-                                <figure class="image hidden" id="after">
-                                    <video autoplay="autoplay" loop="loop" width="821" height="757">
-                                      <source src="img/xray-cropped-min.mp4" type="video/mp4" />
-                                    </video>
-                                </figure>
-                            </div>
-                            <div class="front">
-                                <figure class="image" id="before">
-                                    <img src="img/xray-frame-2x.png" alt="lung xray before" id="before-image">
-                                </figure>
-                            </div>
+                        <div class="column is-1"></div>
+                        <div class="column is-7">
+                            <figure class="image hidden" id="after">
+                                <video autoplay="autoplay" loop="loop" width="821" height="757">
+                                  <source src="img/xray-cropped-min.mp4" type="video/mp4" />
+                                </video>
+                            </figure>
+                            <figure class="image" id="before">
+                                <img src="img/xray-frame-2x.png" alt="lung xray before" id="before-image">
+                            </figure>
                         </div>
 					</div>
 				</div>

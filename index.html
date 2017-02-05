@@ -13,8 +13,8 @@
             	display: none;
             }
             #before-image {
-            	height: 300px;
-            	width: auto;
+            	width: 821px;
+            	height: auto;
             }
         </style>
         <script>
@@ -27,8 +27,7 @@
 						elem.text('See After');
 					}
 					$("#after").toggleClass('hidden');
-					$("#before1").toggleClass('hidden');
-					$("#before2").toggleClass('hidden');
+					$("#before").toggleClass('hidden');
 				});
 				
 			});
@@ -36,42 +35,27 @@
         </script>
 	</head>
 	<body>
-		<div class="hero is-info is-small">
+		<div class="hero is-info is-medium">
 			<div class="hero-body">
 				<div class="container">
 					<div class="columns">
-						<div class="column is-12 has-text-centered">
+						<div class="column is-4">
 							<h1 class="title is-1">Cubix Health Technologies</h1>
 							<p class="subtitle is-5">revolutionary imaging</p>
 							<br>
 							<p id="toggle-video" class="button is-light is-medium">See After</p>
 						</div>
-					</div>
-
-                    <div class="columns">
-                        <div class="column is-6 is-offset-3">
+                        <div class="column is-6">
                             <figure class="image hidden" id="after">
                                 <video autoplay="autoplay" loop="loop" width="821" height="757">
                                   <source src="img/xray-cropped-min.mp4" type="video/mp4" />
                                 </video>
                             </figure>
+                            <figure class="image" id="before">
+                                <img src="img/xray-frame.png" alt="lung xray before" id="before-image">
+                            </figure>
                         </div>
-                    </div>
-
-                    <div class="columns">
-                    	<div class="column is-3"></div>
-                    	<div class="column is-3">
-                    		<figure class="image" id="before1">
-                                <img src="img/chest1.png" alt="lung xray before 1" id="before-image">
-                            </figure>
-                    	</div>
-                    	<div class="column is-3">
-                    		<figure class="image" id="before2">
-                                <img src="img/chest2.png" alt="lung xray before 2" id="before-image">
-                            </figure>
-                    	</div>
-                    	<div class="column is-3"></div>
-                    </div>
+					</div>
 				</div>
 			</div>
 		</div>

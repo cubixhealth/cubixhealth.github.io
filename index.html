@@ -63,16 +63,17 @@
 		<div class="hero is-info is-small" id="front">
 			<div class="hero-body">
 				<div class="container">
-					<div class="columns">
-						<div class="column is-4-desktop">
+					<div class="columns is-desktop">
+						<div class="column is-4-desktop is-6-tablet is-12-mobile">
                             <br>
 							<h1 class="title is-1">Cubix Health Technologies</h1>
 							<p class="subtitle is-5">taking x-rays into the 3rd dimension</p>
 							<br>
 							<p id="toggle-video" class="button is-light is-medium">See After</p>
 						</div>
-                        <div class="column is-1-desktop"></div>
-                        <div class="column is-7-desktop">
+                        <div class="column is-1-desktop is-hidden-mobile"></div>
+                        <div class="is-hidden-widescreen is-hidden-desktop"><br><br><br></div>
+                        <div class="column is-7-desktop is-6-tablet is-12-mobile">
                             <figure class="image hidden" id="after">
                                 <video autoplay="autoplay" loop="loop" width="500px" height="auto">
                                   <source src="img/xray-cropped-min.mp4" type="video/mp4" />

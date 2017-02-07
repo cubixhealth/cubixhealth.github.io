@@ -4,60 +4,13 @@
 		<title>Home | Cubix</title>
 		<link type="text/css" rel="stylesheet" href="css/bulma-dark.css">
 		<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
-		<script src="js/jquery-3.1.1.min.js"></script>
         <link type="text/css" rel="stylesheet" href="css/style.css">
-        <script>
-			$(document).ready(function() {
-				var elem = $("#toggle-video");
-				elem.click(function() {
-					if (elem.text() == 'See After') {
-						elem.text('See Before');
-                        $("#before").hide();
-                        $("#after").fadeIn(2000);
-					} else if (elem.text() == 'See Before') {
-						elem.text('See After');
-                        $("#after").hide();
-                        $("#before").fadeIn(500);
-					}
-				});
-
-				var modal = $("#contactModal");
-				var btn = $("#contactBtn");
-
-				btn.click(function() {
-					modal.addClass('is-active');
-				});
-
-				$(".modal-background, #cancel, .delete").click(function() {
-					modal.removeClass('is-active');
-				});
-
-				$("#sendBtn").click(function() {
-					var email = $("#email");
-					var sub = $("#sub");
-					var msg = $("#msg");
-
-					var emailText = $("#email").val();
-					var subjectText = $("#sub").val();
-					var msgText = $("#msg").val();
-
-					console.log(msgText);
-
-					var mailto = 'mailto:brooke.stephanian@gmail.com?Subject=' + encodeURI(subjectText) + '&body=' + encodeURI(msgText);
-
-					$("#sendBtn").attr('href', mailto);
-
-					email.val('');
-					sub.val('');
-					msg.val('');
-					modal.removeClass('is-active');
-				});
-
-
-				
-			});
-        	
-        </script>
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="img/favicons/manifest.json">
+		<link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
 	</head>
 	<body>
 		<nav class="nav is-dark">
@@ -132,6 +85,8 @@
 			</div>
 		</div>
 	</body>
+	<script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/main.js"></script>
 </html>
 
 

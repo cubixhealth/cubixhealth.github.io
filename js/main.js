@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 		var mailto = 'mailto:brooke.stephanian@gmail.com?Subject=' + encodeURI(subjectText) + '&body=' + encodeURI(msgText);
 
-		var = samsemail = 'stsai25@jhmi.edu';
+		var samsemail = 'stsai25@jhmi.edu';
 
 		$("#sendBtn").attr('href', mailto);
 
@@ -45,6 +45,10 @@ $(document).ready(function() {
 		msg.val('');
 		modal.removeClass('is-active');
 	});
+
+	// $("#home").click(function() {
+	// 	window.location.reload(true);
+	// });
 });
 
 

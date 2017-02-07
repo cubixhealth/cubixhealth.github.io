@@ -1,0 +1,24 @@
+html {
+    background-color: #000;
+}
+
+.hidden {
+	display: none;
+}
+
+#before-image {
+      width: 700px;
+      height: auto;
+}
+
+#after {
+      top: -50px;
+}
+
+.cross {
+	position: absolute;
+	z-index: -1;
+	bottom: 0;
+	width: 100%;
+}
+

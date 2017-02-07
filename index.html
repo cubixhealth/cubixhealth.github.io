@@ -5,18 +5,7 @@
 		<link type="text/css" rel="stylesheet" href="css/bulma-dark.css">
 		<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
 		<script src="js/jquery-3.1.1.min.js"></script>
-        <style>
-            html {
-                background-color: #000;
-            }
-            .hidden {
-            	display: none;
-            }
-            #before-image {
-            	width: 1000px;
-            	height: auto;
-            }
-        </style>
+        <link type="text/css" rel="stylesheet" href="css/style.css">
         <script>
 			$(document).ready(function() {
 				var elem = $("#toggle-video");
@@ -31,34 +20,113 @@
                         $("#before").fadeIn(500);
 					}
 				});
+
+				var modal = $("#contactModal");
+				var btn = $("#contactBtn");
+
+				btn.click(function() {
+					modal.addClass('is-active');
+				});
+
+				$(".modal-background, #cancel, .delete").click(function() {
+					modal.removeClass('is-active');
+				});
+
+				$("#sendBtn").click(function() {
+					var email = $("#email");
+					var sub = $("#sub");
+					var msg = $("#msg");
+
+					var emailText = $("#email").val();
+					var subjectText = $("#sub").val();
+					var msgText = $("#msg").val();
+
+					console.log(msgText);
+
+					var mailto = 'mailto:brooke.stephanian@gmail.com?Subject=' + encodeURI(subjectText) + '&body=' + encodeURI(msgText);
+
+					$("#sendBtn").attr('href', mailto);
+
+					email.val('');
+					sub.val('');
+					msg.val('');
+					modal.removeClass('is-active');
+				});
+
+
 				
 			});
         	
         </script>
 	</head>
 	<body>
-		<div class="hero is-info is-small">
+		<nav class="nav is-dark">
+			<div class="nav-left">
+				<a href="index.html">
+					<img src="img/logo.png" style="margin-left:10px" class="nav-item" alt="cubix logo" width="90px" height="auto">
+				</a>
+			</div>
+			<div class="nav-right">
+				<div class="nav-item">
+					<button id="contactBtn" class="button is-info">Contact Us</button>
+				</div>
+			</div>
+			<div class="modal" id="contactModal">
+			  <div class="modal-background"></div>
+			  <div class="modal-card">
+			    <header class="modal-card-head">
+			      <p class="modal-card-title">Contact Us</p>
+			      <button class="delete"></button>
+			    </header>
+			    <section class="modal-card-body">
+			    	<div class="columns">
+			    		<div class="column is-half">
+			    			<label class="label">Email</label>
+							<p class="control">
+							  <input id="email" class="input" type="text" placeholder="your@email.com">
+							</p>
+			    		</div>
+			    		<div class="column is-half">
+			    			<label class="label">Subject</label>
+							<p class="control">
+							  <input id="sub" class="input" type="text" placeholder="Subject">
+							</p>
+			    		</div>
+			    	</div>
+			    	<label class="label">Message</label>
+					<p class="control">
+					  <textarea id="msg" class="textarea" placeholder="Message"></textarea>
+					</p>
+			    </section>
+			    <footer class="modal-card-foot">
+			      <a id="sendBtn" href="" class="button is-dark">Send email</a>
+			      <a id="cancel" class="button is-default">Cancel</a>
+			    </footer>
+			  </div>
+			</div>
+		</nav>
+		<div class="hero is-info is-small" id="front">
 			<div class="hero-body">
 				<div class="container">
 					<div class="columns">
-						<div class="column is-4">
-                            <br><br><br>
+						<div class="column is-4-desktop">
+                            <br>
 							<h1 class="title is-1">Cubix Health Technologies</h1>
 							<p class="subtitle is-5">taking x-rays into the 3rd dimension</p>
 							<br>
 							<p id="toggle-video" class="button is-light is-medium">See After</p>
 						</div>
-                        <div class="column is-1"></div>
-                        <div class="column is-7">
+                        <div class="column is-1-desktop"></div>
+                        <div class="column is-7-desktop">
                             <figure class="image hidden" id="after">
-                                <video autoplay="autoplay" loop="loop" width="821" height="757">
+                                <video autoplay="autoplay" loop="loop" width="500px" height="auto">
                                   <source src="img/xray-cropped-min.mp4" type="video/mp4" />
                                 </video>
                             </figure>
                             <figure class="image" id="before">
                                 <img src="img/xray-frame-2x.png" alt="lung xray before" id="before-image">
                             </figure>
-                        </div>
+                        </div>   
 					</div>
 				</div>
 			</div>

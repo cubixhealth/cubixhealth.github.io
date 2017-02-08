@@ -45,6 +45,16 @@ $(document).ready(function() {
 		msg.val('');
 		modal.removeClass('is-active');
 	});
+	
+	$("#toggleNight").click(function() {
+		if ($("#toggleNight").hasClass('is-dark')) {
+			$(".is-dark").addClass('is-light');
+			$(".is-light").removeClass('is-dark');
+		} else {
+			$(".is-light").addClass('is-dark');
+			$(".is-dark").removeClass('is-light');
+		}
+	});
 });
 
 

@@ -47,12 +47,16 @@ $(document).ready(function() {
 	});
 	
 	$("#toggleNight").click(function() {
-		if ($("#toggleNight").hasClass('is-dark')) {
+		if ($("#toggleNight").hasClass('is-light')) {
 			$(".is-dark").addClass('is-light');
 			$(".is-light").removeClass('is-dark');
-		} else {
+			$("#toggleNight, #contactBtn").addClass('is-dark');
+			$("#toggleNight, #contactBtn").removeClass('is-light');
+		} else if ($("#toggleNight").hasClass('is-dark')){
 			$(".is-light").addClass('is-dark');
 			$(".is-dark").removeClass('is-light');
+			$("#toggleNight, #contactBtn").addClass('is-light');
+			$("#toggleNight, #contactBtn").removeClass('is-dark');
 		}
 	});
 });

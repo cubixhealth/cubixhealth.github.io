@@ -45,10 +45,6 @@ $(document).ready(function() {
 		msg.val('');
 		modal.removeClass('is-active');
 	});
-
-	// $("#home").click(function() {
-	// 	window.location.reload(true);
-	// });
 });
 
 

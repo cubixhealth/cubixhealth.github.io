@@ -7,19 +7,16 @@ html {
 }
 
 #before-image {
-      width: 700px;
-      height: auto;
+  width: 700px;
+  height: auto;
 }
 
 #after {
-      top: -50px;
+  top: -50px;
 }
 
-.cross {
-	position: absolute;
-	z-index: -1;
-	bottom: 0;
-	width: 100%;
+#before {
+  margin-bottom: 105px;
 }
 
 .footer {
